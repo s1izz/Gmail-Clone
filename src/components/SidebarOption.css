@@ -9,6 +9,17 @@
     color: #818181;
 }
 
+.sidebar__option:hover,
+.sidebar__option:hover p,
+.sidebar__option:hover h3,
+.sidebar__option--active,
+.sidebar__option--active p,
+.sidebar__option--active h3 {
+    background-color: #fcecec;
+    color: #c04b37;
+    font-weight: 800;
+}
+
 .sidebar__option .MuiSvgIcon-root {
     padding: 5px;
 }
@@ -23,6 +34,10 @@
 .sidebar__option p {
     display: none;
     font-weight: 300;
+}
+
+.sidebar__option--active p {
+    display: inline !important;
 }
 
 .sidebar__option:hover p {
