@@ -1,6 +1,7 @@
 import React from "react";
 import "./EmailList.css";
 import Section from './Section'
+import EmailRow from "./EmailRow";
 import { CheckBox } from "@mui/icons-material";
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
 import { IconButton } from "@mui/material";
@@ -50,8 +51,23 @@ function EmailList() {
 
       <div className="emailList__sections">
         <Section Icon={InboxIcon} title="Primary" color="red" selected />
-        <Section Icon={LocalOfferIcon} title="Promotions" color="green" selected />
-        <Section Icon={PeopleIcon} title="Social" color="#1A73E8" selected />
+        <Section Icon={LocalOfferIcon} title="Promotions" color="green"/>
+        <Section Icon={PeopleIcon} title="Social" color="#1A73E8"/>
+      </div>
+
+      <div className="emailList__list">
+        <EmailRow 
+          title="Twitch"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow 
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
       </div>
     </div>
   );

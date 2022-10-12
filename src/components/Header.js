@@ -4,8 +4,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Avatar, IconButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import AppsIcon from '@mui/icons-material/Apps';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import AppsIcon from "@mui/icons-material/Apps";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -14,10 +15,12 @@ function Header() {
         <IconButton>
           <MenuIcon />
         </IconButton>
-        <img
-          src="https://www.vectorlogo.zone/logos/gmail/gmail-ar21.png"
-          alt=""
-        />
+        <Link to="/">
+          <img
+            src="https://www.vectorlogo.zone/logos/gmail/gmail-ar21.png"
+            alt=""
+          />
+        </Link>
       </div>
       <div className="header__middle">
         <SearchIcon />
