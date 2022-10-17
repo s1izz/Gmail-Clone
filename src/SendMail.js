@@ -3,6 +3,11 @@ import "./SendMail.css";
 import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { closeSendMessage } from "./features/mailSlice";
+import { useDispatch } from "react-redux";
+import firebase from "firebase/compat/app"
+import { db } from "./firebase";
+
 
 function SendMail() {
   const {
@@ -11,21 +16,34 @@ function SendMail() {
     watch,
     formState: { errors },
   } = useForm();
+  const dispatch = useDispatch()
 
   const onSubmit = (formData) => {
     console.log(formData);
+    db.collection('emails').add({
+      to: formData.to,
+      subject: formData.subject,
+      message: formData.message,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+
+    dispatch(closeSendMessage())
   };
+
+  
 
   return (
     <div className="sendMail">
       <div className="sendMail__header">
         <h3>New Message</h3>
-        <CloseIcon className="sendMail__close" />
+        <CloseIcon 
+        className="sendMail__close"
+        onClick={() => dispatch(closeSendMessage())} />
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
           name="to"
-          type="text"
+          type="email"
           placeholder="To"
           {...register("to", { required: true })}
         />
