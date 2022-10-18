@@ -26,7 +26,7 @@ function EmailList() {
         setEmails(
           snapshot.docs.map((doc) => ({
             id: doc.id,
-            data: doc.data,
+            data: doc.data(),
           }))
         )
       );
@@ -72,8 +72,78 @@ function EmailList() {
       </div>
 
       <div className="emailList__list">
+        {emails.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow 
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            description={message}
+            time={new Date(timestamp?.seconds * 1000).toUTCString()}
+          />
+        ))}
         <EmailRow
           title="Twitch"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
+          subject="Hey follow person!!!"
+          description="This is a test"
+          time="10pm"
+        />
+        <EmailRow
+          title="espongebob"
           subject="Hey follow person!!!"
           description="This is a test"
           time="10pm"

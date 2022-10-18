@@ -1,5 +1,6 @@
 .emailRow {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 50px;
     border-bottom: 1px solid whitesmoke;
@@ -14,7 +15,6 @@
 
 .emailRow__options {
     display: flex;
-    align-items: center;
 }
 
 .emailRow__title {
